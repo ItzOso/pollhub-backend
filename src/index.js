@@ -9,7 +9,7 @@ const dotenv = require("dotenv");
 // middlewares
 app.use(express.json());
 app.use(morgan("tiny"));
-app.use(cors());
+app.use(cors({origin:"https://pollhub-backend.onrender.com"}));
 dotenv.config();
 
 const Auth = require("./Routes/auth");
