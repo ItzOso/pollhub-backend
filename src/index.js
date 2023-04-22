@@ -10,6 +10,7 @@ const dotenv = require("dotenv");
 app.use(express.json());
 app.use(morgan("tiny"));
 app.use(cors({origin:"https://pollhub-frontend.onrender.com"}));
+router.use([ '/login', '/polls', "/create-poll", "/signup", ], express.static(path.join(__dirname, '../dist/')));
 dotenv.config();
 
 const Auth = require("./Routes/auth");
